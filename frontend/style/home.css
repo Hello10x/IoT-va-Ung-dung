@@ -1,0 +1,209 @@
+.metrics-grid{
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    /* gap: 80px; */
+    margin-bottom: 30px;
+    margin-right: 80px;
+    margin-left: 80px;
+}
+.metric-card{
+    padding: 25px;
+    border-radius: 15px;
+    color:black;
+    width: 300px;
+    height: 150px;
+    overflow:hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.25s ease;
+}
+.metric-card:hover{
+    transform: translateY(-4px); /* nổi lên một chút */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+.metric-header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+
+}
+.metric-title{
+    font-size: 20px;
+    font-weight: bold;
+} 
+.metric-icon{
+    padding: 12px;
+    display: flex;
+    height: 40px;
+    width: 40px;
+    border-radius: 10%;
+}
+.metric-icon i{
+    font-size: 40px;
+}
+.metric-value {
+    font-size: 18px;
+    display: flex;
+    padding: 15px;
+    justify-content: right;
+    font-weight: bold;
+}
+.Tempurature{
+    background-color: #FFBBBC;
+}
+.Humidity{
+    background-color: #BBCFFF;
+}
+.Light{
+    background-color: #FCFFBC;
+}
+.dashboard-content{
+    display: flex;
+    justify-content: space-between;
+    margin-right: 250px;
+    margin-left: 80px;
+}
+.controls-panel{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 300px;
+    position: relative;
+}
+.control-card{
+    display: flex;
+    justify-content: space-between;
+    padding: 25px;
+    border-radius: 10%;
+    color: black;
+    overflow: hidden;
+    width: 250px;
+    height: 100px;
+    background-color: #E9F9FE;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.25s ease;
+}
+.control-card:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+.control-header{
+    display: flex;
+}
+.control-icon{
+    padding: 12px;
+    display: flex;
+    height: 40px;
+    width: 40px;
+    border-radius: 10%;
+}
+.control-icon i{
+font-size: 40px;
+}
+.control-title {
+    font-size: 14;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.btn-toggle{
+    display: flex;
+    color: black;
+    width: 50px;
+    height: 30px;
+    background-color: #D9D9D9;
+    border-radius: 30%;
+    justify-content: center;
+    align-items: center;
+}
+.toggle-switch{
+    position: relative;
+    width: 60px;
+    height: 30px;
+
+}
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 30px;
+}
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked+.slider {
+    background-color: #101010;
+}
+
+input:checked+.slider:before {
+    transform: translateX(30px);
+}
+.temp { background: #ffd6d6; color: #d60000; }
+.humid { background: #d6e3ff; color: #0040d6; }
+.light { background: #fff9d6; color: #999900; }
+
+.chart-box {
+  background: #F5F6E8;
+  border: 2px solid #333;
+  border-radius: 10px;
+  padding: 15px;
+  width: 930px;
+  height: 470px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: left;
+  align-items: last baseline;
+}
+
+.chart-note {
+  display: flex;
+  gap: 15px;
+  font-size: 14px;
+  
+}
+
+/* 🌪️ Quạt xoay */
+@keyframes spinFan {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.fan-rotate {
+  animation: spinFan 1s linear infinite;
+  color: #00bcd4;
+}
+
+/* 💡 Đèn sáng vàng */
+.light-glow {
+  color: #FFD700;
+  text-shadow: 0 0 8px #FFD700, 0 0 16px #FFD700;
+}
+
+/* ❄️ AC xoay (xoay chậm) */
+.ac-rotate {
+  animation: spinFan 1.5s linear infinite;
+  color: #00aaff;
+}
+.control-icon i {
+  transition: all 0.3s ease-in-out;
+}

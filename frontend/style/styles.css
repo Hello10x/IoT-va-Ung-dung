@@ -1,0 +1,55 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #F2E4E4;
+}
+
+.nav-icons{
+    position: fixed;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    margin-left: 20px;
+}
+
+.nav-icon{
+    background-color: #E0F5F9;
+    padding: 12px 12px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav-icon i{
+    font-size: 40px;
+}
+.container{
+ /* display: none; */
+ margin-left: 150px;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user-avatar{
+    background-color: #E0F5F9;
+    padding: 12px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 40px;
+}
+.user-avatar i{
+    font-size: 40px;
+}

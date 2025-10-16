@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IoTdashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/style/actiondevices.css">
+    <link rel="stylesheet" href="/style/styles.css">
+</head>
+
+<body>
+    <div class="nav-icons">
+        <div class="nav-icon" onclick="window.location.href='home.html'"><i class="fa-solid fa-house"></i></div>
+        <div class="nav-icon" onclick="window.location.href='datasensor.html'"><i class="fa-solid fa-list"></i></div>
+        <div class="nav-icon" onclick="location.reload()"><i class="fa-solid fa-clock-rotate-left"></i></div>
+
+    </div>
+    <div class="container">
+        <div class="header">
+            <h1 class="title">IoT Dashboad</h1>
+            <div class="user-avatar" onclick="window.location.href='infor.html'"><i class="fa-solid fa-user"></i></div>
+        </div>
+        <div class="device-sections">
+            <h2 class="devices-title">Devices</h2>
+            <div class="device-list">
+                <div class="control-card">
+                    <div class="control-header">
+                        <div>
+                            <div class="control-icon"><i class="fa-solid fa-fan"></i></div>
+                            <div class="control-title"><span>Fan</span> <span>control</span></div>
+                        </div>
+                    </div>
+                    <div class="btn-toggle" id="fanBtn">ON</div>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="fanToggle" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="control-card">
+                    <div class="control-header">
+                        <div>
+                            <div class="control-icon"><i class="fa-solid fa-lightbulb"></i></div>
+                            <div class="control-title"><span>Light</span> <span>control</span></div>
+                        </div>
+                    </div>
+                    <div class="btn-toggle" id="lightBtn">ON</div>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="lightToggle" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="control-card">
+                    <div class="control-header">
+                        <div>
+                            <div class="control-icon"><i class="fa-solid fa-snowflake"></i></div>
+                            <div class="control-title"><span>Air</span> <span>control</span></div>
+                        </div>
+                    </div>
+                    <div class="btn-toggle" id="airBtn">ON</div>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="airToggle" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="recent-actions">
+            <div class="actions-title">Recent Actions</div>
+            <div class="actions-header">
+                <div class="filter">
+                    <select name="Device" id="device">
+                        <option value="All">All</option>
+                        <option value="Fan">Fan</option>
+                        <option value="Led">Light</option>
+                        <option value="AC">AC</option>
+                    </select>
+                    <select name="Action" id="action">
+                        <option value="All">All</option>
+                        <option value="ON">ON</option>
+                        <option value="OFF">OFF</option>
+                    </select>
+                    <select name="Trigger" id="trigger">
+                        <option value="All">All</option>
+                        <option value="Manual">Manual</option>
+                        <option value="Schedual">Schedual</option>
+                        <option value="Auto">Auto</option>
+                    </select>
+                </div>
+                <div class="search-box">
+                    <input type="text" placeholder="Search by time/...">
+                    <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+                <!-- <div class="filter">
+                    <select name="Filter" id="filter">
+                        <option value="All">All</option>
+                        <option value="device">Device</option>
+                        <option value="action">Action</option>
+                        <option value="trigger">Trigger</option>
+                    </select>
+                </div> -->
+            </div>
+
+            <table class="actions-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Device</th>
+                        <th>Action</th>
+                        <th>Trigger</th>
+                        <th>Time <span class="sort-icon" data-key="time">↓</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+
+            <div class="pagination-containers">
+                <button id="prev-btn" class="page-nav">&lt;</button>
+                <div id="page-numbers" class="page-numbers"></div>
+                <button id="next-btn" class="page-nav">&gt;</button>
+                <div class="page-size">
+                    <label for="Pagesize">Hiển thị: </label>
+                    <select name="Pagesize" id="page-size">
+                        <option value="size10">10 dòng</option>
+                        <option value="size20">20 dòng</option>
+                        <option value="size50">50 dòng</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/script/actiondevices.js"></script>
+</body>
+
+</html>

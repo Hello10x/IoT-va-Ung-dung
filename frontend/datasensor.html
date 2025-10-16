@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IoTdashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/style/datasensor.css">
+    <link rel="stylesheet" href="/style/styles.css">
+</head>
+
+<body>
+    <div class="nav-icons">
+        <div class="nav-icon" onclick="window.location.href='home.html'"><i class="fa-solid fa-house"></i></div>
+        <div class="nav-icon" onclick="location.reload()"><i class="fa-solid fa-list"></i></div>
+        <div class="nav-icon" onclick="window.location.href='actiondevices.html'"><i
+                class="fa-solid fa-clock-rotate-left"></i></div>
+
+    </div>
+    <div class="container">
+        <div class="header">
+            <h1 class="title">IoT Dashboad</h1>
+            <div class="user-avatar" onclick="window.location.href='infor.html'"><i class="fa-solid fa-user"></i></div>
+        </div>
+        <div class="metrics-grid">
+            <div class="metric-card Tempurature">
+                <div class="metric-header">
+                    <div class="metric-item">
+                        Tempurature Avg:
+                        <span id="temp-avg-value">27°C</span>
+                    </div>
+                    <div class="metric-item">
+                        Tempurature Max:
+                        <span id="temp-max-value">27°C</span>
+                    </div>
+                </div>
+                <div class="metric-icon"><i class="fa-solid fa-temperature-three-quarters"></i></div>
+            </div>
+            <div class="metric-card Humidity">
+                <div class="metric-header">
+                    <div class="metric-item">
+                        Humidity Avg:
+                        <span id="hum-avg-value">76%</span>
+                    </div>
+                    <div class="metric-item">
+                        Humidity Max:
+                        <span id="hum-max-value">76%</span>
+                    </div>
+                </div>
+                <div class="metric-icon"><i class="fa-solid fa-droplet"></i></div>
+            </div>
+            <div class="metric-card Light">
+                <div class="metric-header">
+                    <div class="metric-item">
+                        Light level Avg:
+                        <span id="lux-avg-value">126 lux</span>
+                    </div>
+                    <div class="metric-item">
+                        Light level Max:
+                        <span id="lux-max-value">126 lux</span>
+                    </div>
+                </div>
+                <div class="metric-icon"><i class="fa-regular fa-lightbulb"></i></div>
+            </div>
+        </div>
+
+        <div class="table-sensor">
+            <h3>Data sensor</h3>
+            <div class="table-header">
+                <div class="search-box">
+                    <input type="text" placeholder="Search by time/temp...">
+                    <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+                <div class="filter">
+                    <select name="Filter" id="filter">
+                        <option value="All">All</option>
+                        <option value="Temp">Tempurature</option>
+                        <option value="Hum">Humidity</option>
+                        <option value="Lightlevel">Light</option>
+                    </select>
+                </div>
+            </div>
+            <div class="table-contents">
+                <table>
+                    <thead>
+                        <th>ID</th>
+                        <th>Temp (℃) <span class="sort-icon" data-key="temp">↕</span></th>
+                        <th>Humidity (%) <span class="sort-icon" data-key="hum">↕</span></th>
+                        <th>Light (lux) <span class="sort-icon" data-key="lux">↕</span></th>
+                        <th>Time <span class="sort-icon" data-key="time">↓</span></th>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+            <div class="pagination-containers">
+                <button id="prev-btn" class="page-nav">&lt;</button>
+                <div id="page-numbers" class="page-numbers"></div>
+                <button id="next-btn" class="page-nav">&gt;</button>
+                <div class="page-size">
+                    <label for="Pagesize">Hiển thị: </label>
+                    <select name="Pagesize" id="page-size">
+                        <option value="size10">10 dòng</option>
+                        <option value="size20">20 dòng</option>
+                        <option value="size50">50 dòng</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- <script src="/scritp/home.js"></script> -->
+
+    <script src="/script/datasensor.js"></script>
+</body>
+
+</html>

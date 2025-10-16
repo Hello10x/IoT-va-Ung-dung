@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IoTdashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/style/home.css">
+    <link rel="stylesheet" href="/style/styles.css">
+</head>
+
+<body>
+    <div class="nav-icons">
+        <div class="nav-icon" onclick="location.reload()"><i class="fa-solid fa-house"></i></div>
+        <div class="nav-icon" onclick="window.location.href='datasensor.html'"><i class="fa-solid fa-list"></i></div>
+        <div class="nav-icon" onclick="window.location.href='actiondevices.html'"><i
+                class="fa-solid fa-clock-rotate-left"></i></div>
+
+    </div>
+    <div class="container">
+        <div class="header">
+            <h1 class="title">IoT Dashboard</h1>
+            <div class="user-avatar" onclick="window.location.href='infor.html'"><i class="fa-solid fa-user"></i></div>
+        </div>
+        <div class="metrics-grid">
+            <div class="metric-card Tempurature">
+                <div class="metric-header">
+                    <div class="metric-title">Tempurature</div>
+                    <div class="metric-icon"><i class="fa-solid fa-temperature-three-quarters"></i></div>
+                </div>
+                <div class="metric-value" id="temp-value">26°C</div>
+            </div>
+            <div class="metric-card Humidity">
+                <div class="metric-header">
+                    <div class="metric-title">Humidity</div>
+                    <div class="metric-icon"><i class="fa-solid fa-droplet"></i></div>
+                </div>
+                <div class="metric-value" id="hum-value">76%</div>
+            </div>
+            <div class="metric-card Light">
+                <div class="metric-header">
+                    <div class="metric-title">Light</div>
+                    <div class="metric-icon"><i class="fa-regular fa-lightbulb"></i></div>
+                </div>
+                <div class="metric-value" id="light-value">76 lux</div>
+            </div>
+        </div>
+
+        <div class="dashboard-content">
+            <!-- Chart -->
+            <div class="chart-box">
+                <canvas id="lineChart"></canvas>
+                <!-- <div class="chart-note">
+                    <div class="tempNote">
+                        <span class="box">■</span>
+                        <span class="label">Tempurature</span>
+                    </div>
+                    <div class="humNote">
+                        <span class="box">■</span>
+                        <span class="label">Humidity</span>
+                    </div>
+                    <div class="lightNote">
+                        <span class="box">■</span>
+                        <span class="label">Light level</span>
+                    </div>
+                </div> -->
+            </div>
+
+
+            <div class="controls-panel">
+                <div class="control-card">
+                    <div class="control-header">
+                        <div>
+                            <div class="control-icon"><i class="fa-solid fa-fan"></i></div>
+                            <div class="control-title"><span>Fan</span> <span>control</span></div>
+                        </div>
+                    </div>
+                    <div class="btn-toggle" id="fanBtn">ON</div>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="fanToggle" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="control-card">
+                    <div class="control-header">
+                        <div>
+                            <div class="control-icon"><i class="fa-solid fa-lightbulb"></i></div>
+                            <div class="control-title"><span>Light</span> <span>control</span></div>
+                        </div>
+                    </div>
+                    <div class="btn-toggle" id="lightBtn">ON</div>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="lightToggle" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="control-card">
+                    <div class="control-header">
+                        <div>
+                            <div class="control-icon"><i class="fa-solid fa-snowflake"></i></div>
+                            <div class="control-title"><span>Air</span> <span>control</span></div>
+                        </div>
+                    </div>
+                    <div class="btn-toggle" id="airBtn">ON</div>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="airToggle" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/script/home.js"></script>
+
+
+</body>
+
+</html>
